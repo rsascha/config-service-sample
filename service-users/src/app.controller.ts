@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { ApiResponse } from '@nestjs/swagger';
 import { User } from './entities/user.entity';
 import { Photo } from './entities/photo.entity';
+import { Movie } from './api-movies/api';
 
 @Controller()
 export class AppController {
@@ -40,5 +41,15 @@ export class AppController {
     @Get("/photos")
     getPhotos(): Promise<Photo[]> {
         return this.appService.getPhotos();
+    }
+
+    @ApiResponse({
+        isArray: true,
+        type: Movie,
+        status: 200
+    })
+    @Get("/get-movies")
+    getMovies(): Promise<Movie[]> {
+        return this.appService.getMovies();
     }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { getConnection } from 'typeorm';
 import { User } from './entities/user.entity';
 import { Photo } from './entities/photo.entity';
+import { DefaultApi, Movie } from './api-movies/api';
 
 @Injectable()
 export class AppService {
@@ -59,5 +60,13 @@ export class AppService {
         const photos = await photoRepository.find({});
         return photos;
     };
+
+    async getMovies(): Promise<Movie[]> {
+        const defaultApi = new DefaultApi("http://localhost:3334");
+        return defaultApi.appControllerGetMovies()
+            .then(result => {
+                return result.body;
+            });
+    }
 
 }

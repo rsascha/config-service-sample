@@ -17,7 +17,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm:help": "ts-node ./node_modules/typeorm/cli.js --help",
+    "typeorm:migration:create": "ts-node ./node_modules/typeorm/cli.js migration:create -n my-test",
+    "typeorm:migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -n my-test",
+    "typeorm:migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "typeorm:migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
+    "typeorm:schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
+    "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
@@ -25,6 +32,7 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/swagger": "^4.5.2",
     "@nestjs/typeorm": "^7.0.0",
+    "lorem-ipsum": "^2.0.3",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
