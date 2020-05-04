@@ -62,7 +62,9 @@ export class AppService {
     };
 
     async getMovies(): Promise<Movie[]> {
-        const defaultApi = new DefaultApi("http://localhost:3334");
+        const serviceMoviesHost = process.env.serviceMoviesHost || "localhost";
+        const serviceMoviesPort = process.env.serviceMoviesPort || "3334";
+        const defaultApi = new DefaultApi(`http://${serviceMoviesHost}:${serviceMoviesPort}`);
         return defaultApi.appControllerGetMovies()
             .then(result => {
                 return result.body;

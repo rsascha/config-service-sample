@@ -67,7 +67,9 @@ export class AppService {
     };
 
     async getUsers(): Promise<User[]> {
-        const defaultApi = new DefaultApi("http://localhost:3333");
+        const serviceUsersHost = process.env.serviceUsersHost || "localhost";
+        const serviceUsersPort = process.env.serviceUsersPort || "3333";
+        const defaultApi = new DefaultApi(`http://${serviceUsersHost}:${serviceUsersPort}`);
         return defaultApi.appControllerGetUsers()
             .then(result => {
                 return result.body;

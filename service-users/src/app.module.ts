@@ -9,7 +9,7 @@ import { Photo } from './entities/photo.entity';
   imports: [
     TypeOrmModule.forRoot({
         "type": "mysql",
-        "host": "localhost",
+        "host": process.env.database || "localhost",
         "port": 3306,
         "username": "root",
         "password": "password",
