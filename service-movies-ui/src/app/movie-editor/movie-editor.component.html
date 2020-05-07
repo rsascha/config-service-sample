@@ -1,0 +1,7 @@
+<p>movie-editor works!</p>
+<div>
+    <div *ngFor="let movie of movies$ | async; index as i; first as isFirst">
+        {{ movie | json}}
+    </div>
+    
+</div>

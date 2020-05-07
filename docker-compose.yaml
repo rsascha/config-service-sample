@@ -19,6 +19,7 @@ services:
     environment:
       - database=db
       - serviceMoviesHost=service-movies
+      - serviceMoviesPort=4200
     ports:
       - 3333:3333
 
@@ -27,6 +28,7 @@ services:
     environment:
       - database=db
       - serviceUsersHost=service-users
+      - serviceUsersPort=4200
     ports:
       - 3334:3334
       
