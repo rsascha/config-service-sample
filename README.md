@@ -17,3 +17,7 @@ npm install
 npm install @nestjs/swagger swagger-ui-express @nestjs/typeorm typeorm mysql
 
 ```
+
+## K8s
+
+<https://github.com/rancher/k3s>
