@@ -2,6 +2,6 @@
 <div>
     <div *ngFor="let movie of movies$ | async; index as i; first as isFirst">
         {{ movie | json}}
+        <hr>
     </div>
-    
 </div>
