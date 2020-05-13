@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieEditorComponent } from './movie-editor/movie-editor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieEditorComponent
+    MovieEditorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

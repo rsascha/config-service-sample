@@ -1,0 +1,7 @@
+{
+    "/service-movies": {
+        "target": "http://localhost:3334",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

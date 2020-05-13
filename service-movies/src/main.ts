@@ -2,10 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import * as swStats from 'swagger-stats';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'service-users';
+  const globalPrefix = 'service-movies';
   const logger = new Logger("main -> bootstrap()");
 
   app.setGlobalPrefix(globalPrefix);
@@ -21,8 +22,11 @@ async function bootstrap() {
   SwaggerModule.setup('swagger', app, document);
   logger.log(`Starting http://localhost:${port}/swagger`);
 
+  app.use(swStats.getMiddleware({}));
+  logger.log(`http://localhost:${port}/swagger-stats/ux#/`)
+
   await app.listen(port, () => {
-      logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+      logger.log(`Listening at http://localhost:${port}/${globalPrefix}`);
   });
 }
 

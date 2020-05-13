@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MovieEditorComponent } from './movie-editor/movie-editor.component';
-
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
     {
@@ -10,8 +10,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        pathMatch: 'full',
-        redirectTo: ''
+        component: NotFoundComponent
     }
 ];
 

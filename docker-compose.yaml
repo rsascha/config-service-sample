@@ -13,22 +13,39 @@ services:
       - MYSQL_ROOT_PASSWORD=password
     ports:
       - 8080:80
+    depends_on: 
+      - db
 
-  service-users:
-    build: service-users
-    environment:
-      - database=db
-      - serviceMoviesHost=service-movies
-      - serviceMoviesPort=4200
-    ports:
-      - 3333:3333
+#  service-users-db-migration:
+#    build: 
+#      context: service-users
+#      dockerfile: db.Dockerfile
+#    environment:
+#      - TYPEORM_HOST=db
+#    depends_on: 
+#      - db
+
+  # service-users:
+  #   build: service-users
+  #   environment:
+  #     - port=3333
+  #     - database=db
+  #     - serviceMoviesHost=service-movies
+  #     - serviceMoviesPort=3334
+  #   ports:
+  #     - 3333:3333
+  #   depends_on: 
+  #     - db
 
   service-movies:
     build: service-movies
     environment:
+      - port=3334
       - database=db
       - serviceUsersHost=service-users
-      - serviceUsersPort=4200
+      - serviceUsersPort=3333
     ports:
       - 3334:3334
-      
+    depends_on: 
+      - db
+     

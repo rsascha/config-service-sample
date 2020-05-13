@@ -13,15 +13,15 @@ export class MovieEditorComponent implements OnInit {
     movies$: Observable<Movie[]>;
 
     constructor(private httpClient: HttpClient) {
-        this.movies$ = this.getMovies();
     }
 
     ngOnInit(): void {
+        this.movies$ = this.getMovies();
     }
 
     getMovies(): Observable<Movie[]> {
         const serviceMoviesHost = 'localhost';
-        const serviceMoviesPort = '3334';
+        const serviceMoviesPort = '4200';
         const defaultApi = new DefaultService(this.httpClient, `http://${serviceMoviesHost}:${serviceMoviesPort}`, null);
         return defaultApi.appControllerGetMovies();
     }

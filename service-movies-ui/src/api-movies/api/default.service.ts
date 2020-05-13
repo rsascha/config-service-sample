@@ -114,7 +114,7 @@ export class DefaultService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<object>(`${this.configuration.basePath}/service-users/generate-dummy-data`,
+        return this.httpClient.get<object>(`${this.configuration.basePath}/service-movies/generate-dummy-data`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -153,7 +153,7 @@ export class DefaultService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<any>(`${this.configuration.basePath}/service-users`,
+        return this.httpClient.get<any>(`${this.configuration.basePath}/service-movies`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -193,7 +193,7 @@ export class DefaultService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<Array<Movie>>(`${this.configuration.basePath}/service-users/get-movies`,
+        return this.httpClient.get<Array<Movie>>(`${this.configuration.basePath}/service-movies/get-movies`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -233,7 +233,7 @@ export class DefaultService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<Array<object>>(`${this.configuration.basePath}/service-users/get-users`,
+        return this.httpClient.get<Array<object>>(`${this.configuration.basePath}/service-movies/get-users`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
