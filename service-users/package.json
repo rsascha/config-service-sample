@@ -9,7 +9,6 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -25,7 +24,10 @@
     "typeorm:migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "typeorm:migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
     "typeorm:schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
-    "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync"
+    "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
+    "api:generator:run": "./api-generator-run.sh",
+    "docker:install": "npm ci",
+    "docker:build": "nest build"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
@@ -37,6 +39,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
+    "swagger-stats": "^0.95.17",
     "swagger-ui-express": "^4.1.4",
     "typeorm": "^0.2.24"
   },

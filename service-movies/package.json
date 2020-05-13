@@ -25,6 +25,7 @@
     "typeorm:migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
     "typeorm:schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
     "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
+    "api:generator:run": "./api-generator-run.sh",
     "docker:install": "npm ci",
     "docker:build": "nest build"
   },

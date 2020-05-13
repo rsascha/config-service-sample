@@ -1,3 +1,3 @@
-export const environment = {
-  production: true
-};
+//
+// This file will be generated during docker build process!
+//

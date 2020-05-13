@@ -26,17 +26,17 @@ services:
   #   depends_on: 
   #     - db
 
-  # service-users:
-  #   build: service-users
-  #   environment:
-  #     - port=3333
-  #     - database=db
-  #     - serviceMoviesHost=service-movies
-  #     - serviceMoviesPort=3334
-  #   ports:
-  #     - 3333:3333
-  #   depends_on: 
-  #     - db
+  service-users:
+    build: service-users
+    environment:
+      - port=3333
+      - database=db
+      - serviceMoviesHost=service-movies
+      - serviceMoviesPort=3334
+    ports:
+      - 3333:3333
+    depends_on: 
+      - db
 
   service-movies:
     build: service-movies

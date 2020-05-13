@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "api:generator:run": "./api-generator-run.sh",
     "docker:install": "npm ci",
     "docker:build": "ng build --prod"
   },

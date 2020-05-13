@@ -89,7 +89,7 @@ export class DefaultApi {
      * 
      */
     public async appControllerGenerateDummyData (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: object;  }> {
-        const localVarPath = this.basePath + '/service-users/generate-dummy-data';
+        const localVarPath = this.basePath + '/service-movies/generate-dummy-data';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -150,7 +150,7 @@ export class DefaultApi {
      * 
      */
     public async appControllerGetHello (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body?: any;  }> {
-        const localVarPath = this.basePath + '/service-users';
+        const localVarPath = this.basePath + '/service-movies';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         let localVarFormParams: any = {};
@@ -203,7 +203,7 @@ export class DefaultApi {
      * 
      */
     public async appControllerGetMovies (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<Movie>;  }> {
-        const localVarPath = this.basePath + '/service-users/get-movies';
+        const localVarPath = this.basePath + '/service-movies/get-movies';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -264,7 +264,7 @@ export class DefaultApi {
      * 
      */
     public async appControllerGetUsers (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
-        const localVarPath = this.basePath + '/service-users/get-users';
+        const localVarPath = this.basePath + '/service-movies/get-users';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
