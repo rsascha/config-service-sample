@@ -21,9 +21,9 @@ export class MovieEditorComponent implements OnInit {
     }
 
     getMovies(): Observable<Movie[]> {
-        const serviceMoviesHost = environment.serviceMoviesHost;
-        const serviceMoviesPort = environment.serviceMoviesPort;
-        const defaultApi = new DefaultService(this.httpClient, `http://${serviceMoviesHost}:${serviceMoviesPort}`, null);
+        const applicationHost = environment.applicationHost;
+        const applicationPort = environment.applicationPort;
+        const defaultApi = new DefaultService(this.httpClient, `http://${applicationHost}:${applicationPort}`, null);
         return defaultApi.appControllerGetMovies();
     }
 

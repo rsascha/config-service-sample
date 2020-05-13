@@ -1,11 +1,18 @@
 FROM node:lts-alpine AS build
-WORKDIR /build
 
+# Prepare build image
+RUN apk update
+RUN apk add gettext python3 make g++
+
+# Prepare build
+WORKDIR /build
 COPY . .
 
-RUN ["npm", "install"]
-RUN ["npm", "run", "build"]
+# Start build process
+RUN npm run docker:install
+RUN npm run docker:build
 
+# Generate docker image for production 
 FROM node:lts-alpine
 WORKDIR /application
 COPY --from=build /build/node_modules ./node_modules

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  serviceMoviesHost: 'localhost',
-  serviceMoviesPort: '4200'
+  applicationHost: 'localhost',
+  applicationPort: '4200'
 };
 
 /*

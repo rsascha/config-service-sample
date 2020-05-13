@@ -24,7 +24,9 @@
     "typeorm:migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "typeorm:migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
     "typeorm:schema:drop": "ts-node ./node_modules/typeorm/cli.js schema:drop",
-    "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync"
+    "typeorm:schema:sync": "ts-node ./node_modules/typeorm/cli.js schema:sync",
+    "docker:install": "npm ci",
+    "docker:build": "nest build"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",

@@ -1,5 +1,6 @@
 version: "2.2"
 services:
+
   db:
     image: mariadb
     environment:
@@ -7,23 +8,23 @@ services:
     ports:
       - 3306:3306
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-    ports:
-      - 8080:80
-    depends_on: 
-      - db
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=password
+  #   ports:
+  #     - 8080:80
+  #   depends_on: 
+  #     - db
 
-#  service-users-db-migration:
-#    build: 
-#      context: service-users
-#      dockerfile: db.Dockerfile
-#    environment:
-#      - TYPEORM_HOST=db
-#    depends_on: 
-#      - db
+  # service-users-db-migration:
+  #   build: 
+  #     context: service-users
+  #     dockerfile: db.Dockerfile
+  #   environment:
+  #     - TYPEORM_HOST=db
+  #   depends_on: 
+  #     - db
 
   # service-users:
   #   build: service-users
@@ -48,4 +49,16 @@ services:
       - 3334:3334
     depends_on: 
       - db
-     
+
+  service-movies-ui:
+    build:
+      context: service-movies-ui
+      args:
+        applicationHost: localhost
+        applicationPort: 8090
+        serviceMoviesHost: service-movies   
+        serviceMoviesPort: 3334
+    ports:
+      - 8090:8080
+    depends_on: 
+      - service-movies
