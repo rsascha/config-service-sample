@@ -17,5 +17,5 @@ FROM node:lts-alpine
 WORKDIR /application
 COPY --from=build /build/node_modules ./node_modules
 COPY --from=build /build/dist .
-EXPOSE 3333
+EXPOSE 3334
 ENTRYPOINT ["node", "main"]

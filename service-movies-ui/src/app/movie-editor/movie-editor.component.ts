@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie, DefaultService } from 'src/api-movies';
-import { HttpClient } from '@angular/common/http';
+import { Movie } from 'src/api-movies';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { MoviesService } from '../movies.service';
 
 @Component({
     selector: 'app-movie-editor',
@@ -13,7 +12,7 @@ export class MovieEditorComponent implements OnInit {
 
     movies$: Observable<Movie[]>;
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private moviesService: MoviesService) {
     }
 
     ngOnInit(): void {
@@ -21,10 +20,7 @@ export class MovieEditorComponent implements OnInit {
     }
 
     getMovies(): Observable<Movie[]> {
-        const applicationHost = environment.applicationHost;
-        const applicationPort = environment.applicationPort;
-        const defaultApi = new DefaultService(this.httpClient, `http://${applicationHost}:${applicationPort}`, null);
-        return defaultApi.appControllerGetMovies();
+        return this.moviesService.api.appControllerGetMovies();
     }
 
 

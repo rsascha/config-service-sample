@@ -26,7 +26,7 @@ RUN npm run docker:build
 FROM nginxinc/nginx-unprivileged:alpine
 
 COPY --from=build /build/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /build/dist/service-movies-ui /usr/share/nginx/html
+COPY --from=build /build/dist/service-users-ui /usr/share/nginx/html
 
 EXPOSE 8080
 

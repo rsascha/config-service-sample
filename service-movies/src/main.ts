@@ -13,7 +13,7 @@ async function bootstrap() {
   const port = process.env.port || 3334;
 
   const options = new DocumentBuilder()
-      .setTitle('Users Service')
+      .setTitle('Movies Service')
       .setDescription('<a href="/swagger-json">Open API Schema</a>')
       .setVersion('0.1')
       .build();

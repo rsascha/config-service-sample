@@ -1,6 +1,11 @@
 version: "2.2"
 services:
 
+  development-tools:
+    build: development-tools
+    ports:
+      - 8090:8080
+
   db:
     image: mariadb
     environment:
@@ -68,10 +73,10 @@ services:
       context: service-movies-ui
       args:
         applicationHost: localhost
-        applicationPort: 8090
+        applicationPort: 8092
         serviceMoviesHost: service-movies   
         serviceMoviesPort: 3334
     ports:
-      - 8090:8080
+      - 8092:8080
     depends_on: 
       - service-movies
