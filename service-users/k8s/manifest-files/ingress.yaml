@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: service-users
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: service-users.10.43.240.147.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: service-users
+          servicePort: http

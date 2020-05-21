@@ -1,0 +1,7 @@
+commonLabels:
+  app: development-tools
+
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml

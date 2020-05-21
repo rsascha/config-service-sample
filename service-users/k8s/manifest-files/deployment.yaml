@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: development-tools
+  name: service-users
 spec:
   selector:
     matchLabels:
-      app: development-tools
+      app: service-users
   replicas: 1
   template:
     metadata:
       labels:
-        app: development-tools
+        app: service-users
     spec:
       containers:
-      - name: development-tools
-        image: localhost:5000/development-tools:88
+      - name: service-users
+        image: localhost:5000/service-users:5
         ports:
-        - containerPort: 8080
+        - containerPort: 3333
