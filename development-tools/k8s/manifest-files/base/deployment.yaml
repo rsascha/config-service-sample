@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: development-tools
-        image: localhost:5000/development-tools:88
+        image: localhost:5000/development-tools:90
         ports:
         - containerPort: 8080

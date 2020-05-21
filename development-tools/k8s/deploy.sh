@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl apply -k manifest-files/
+kubectl apply -k manifest-files/development/

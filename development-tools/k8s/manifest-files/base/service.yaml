@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: development-tools
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: http
       protocol: TCP
