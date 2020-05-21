@@ -17,3 +17,12 @@ spec:
         image: localhost:5000/service-users:${VERSION}
         ports:
         - containerPort: 3333
+        env:
+          - name: port
+            value: "3333"
+          - name: database
+            value: "database"
+          - name: serviceMoviesHost
+            value: "service-movies"
+          - name: serviceMoviesPort
+            value: "3334"

@@ -15,6 +15,15 @@ spec:
     spec:
       containers:
       - name: service-users
-        image: localhost:5000/service-users:5
+        image: localhost:5000/service-users:8
         ports:
         - containerPort: 3333
+        env:
+          - name: port
+            value: "3333"
+          - name: database
+            value: "database"
+          - name: serviceMoviesHost
+            value: "service-movies"
+          - name: serviceMoviesPort
+            value: "3334"

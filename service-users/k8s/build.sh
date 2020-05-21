@@ -5,7 +5,7 @@ VERSION=$(cat version) && ((VERSION=VERSION+1)) && echo $VERSION > version
 export VERSION=$VERSION
 
 SOURCE_FILE="templates/deployment.yaml"
-TARGET_FILE="manifest-files/deployment.yaml"
+TARGET_FILE="manifest-files/base/deployment.yaml"
 echo "# GENERATED FROM: ${SOURCE_FILE}" > $TARGET_FILE
 cat $SOURCE_FILE | envsubst >> $TARGET_FILE
 
