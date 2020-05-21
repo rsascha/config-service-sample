@@ -1,6 +1,28 @@
 
 # Run a local Docker Registry
 
+# SSL (not working)
+
+The idea ...
+
+```yaml
+registry:
+  restart: always
+  image: registry:2
+  ports:
+    - 5000:5000
+  environment:
+    REGISTRY_HTTP_TLS_CERTIFICATE: /cert/server.crt
+    REGISTRY_HTTP_TLS_KEY: /cert/server.key
+    REGISTRY_AUTH: htpasswd
+    REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+    REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+  volumes:
+    - ~/.registry/data:/var/lib/registry
+    - ~/.registry/cert:/cert
+    - ~/.registry/auth:/auth
+```
+
 ```bash 
 
 # Setup
@@ -23,5 +45,4 @@ docker pull alpine
 docker login -u admin localhost:5000 # Enter <your-new-password>
 docker tag alpine localhost:5000/alpine
 docker push localhost:5000/alpine
-
 ```

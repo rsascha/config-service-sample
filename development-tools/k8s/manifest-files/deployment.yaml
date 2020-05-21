@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: development-tools-deployment
+  name: development-tools
 spec:
   selector:
     matchLabels:
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: development-tools
-        image: localhost:5000/development-tools:43
+        image: localhost:5000/development-tools:87
         ports:
         - containerPort: 8080

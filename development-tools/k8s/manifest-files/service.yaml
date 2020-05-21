@@ -5,8 +5,10 @@ metadata:
 spec:
   selector:
     app: development-tools
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: 8090
+    - name: http
+      protocol: TCP
+      port: 80
       targetPort: 8080
-      
+    
