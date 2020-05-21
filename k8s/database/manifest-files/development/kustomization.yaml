@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: database
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml

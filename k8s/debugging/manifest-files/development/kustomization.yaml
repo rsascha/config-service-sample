@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: debugger
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml

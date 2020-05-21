@@ -1,0 +1,14 @@
+# GENERATED FROM: templates/pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debugger
+spec:
+  containers:
+  - name: debugger
+    image: localhost:5000/debugger:12
+    command:
+      - sleep
+      - "3600"
+    imagePullPolicy: IfNotPresent
+  restartPolicy: Always

@@ -1,5 +1,5 @@
 commonLabels:
-  app: service-users
+  app: phpmyadmin
 
 resources:
 - deployment.yaml

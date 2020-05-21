@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: phpmyadmin
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml

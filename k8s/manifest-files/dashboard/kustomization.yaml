@@ -1,7 +1,0 @@
-commonLabels:
-  app: dashboard
-
-namespace: kubernetes-dashboard
-
-resources:
-- recommended.yaml
