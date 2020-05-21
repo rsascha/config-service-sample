@@ -11,5 +11,5 @@ spec:
         image: localhost:5000/service-users-migration:25
         command: ["npm", "run", "typeorm:migration:run"]
       restartPolicy: Never
-  backoffLimit: 4
-  
+  backoffLimit: 5
+  ttlSecondsAfterFinished: 5
