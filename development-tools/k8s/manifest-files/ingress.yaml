@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: development-tools
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: development-tools.10.43.240.147.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: development-tools
+          servicePort: http
