@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: traefik
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml

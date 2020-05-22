@@ -1,5 +1,5 @@
 commonLabels:
-  app: service-users-ui
+  app: service-movies-ui
 
 resources:
 - deployment.yaml

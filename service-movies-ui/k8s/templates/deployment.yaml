@@ -1,20 +1,19 @@
-# GENERATED FROM: templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-users-ui
+  name: service-movies-ui
 spec:
   selector:
     matchLabels:
-      app: service-users-ui
+      app: service-movies-ui
   replicas: 1
   template:
     metadata:
       labels:
-        app: service-users-ui
+        app: service-movies-ui
     spec:
       containers:
-      - name: service-users-ui
-        image: localhost:5000/service-users-ui:15
+      - name: service-movies-ui
+        image: localhost:5000/service-movies-ui:${VERSION}
         ports:
         - containerPort: 8080

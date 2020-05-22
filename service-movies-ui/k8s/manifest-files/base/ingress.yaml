@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: service-movies-ui
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: service-movies-ui.192.168.179.41.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: service-movies-ui
+          servicePort: http

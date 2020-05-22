@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: development-tools
+  name: service-movies-ui
 spec:
   selector:
     matchLabels:
-      app: development-tools
+      app: service-movies-ui
   replicas: 1
   template:
     metadata:
       labels:
-        app: development-tools
+        app: service-movies-ui
     spec:
       containers:
-      - name: development-tools
-        image: localhost:5000/development-tools:91
+      - name: service-movies-ui
+        image: localhost:5000/service-movies-ui:3
         ports:
         - containerPort: 8080

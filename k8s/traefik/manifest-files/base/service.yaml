@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: traefik
+  namespace: development
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+    - name: admin
+      protocol: TCP
+      port: 8080
+  selector:
+    app: traefik
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.179.41

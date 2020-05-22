@@ -25,7 +25,7 @@ RUN npm run docker:build
 # FOR LOCAL DEVELOPMENT ONLY - YOU HAVE TO REFRESH YOUR DIST FOLDER `npm run build`
 #COPY dist .
 
-# Generate docker image for production 
+# Generate docker image for production
 FROM nginxinc/nginx-unprivileged:alpine
 
 COPY --from=build /build/default.conf /etc/nginx/conf.d/default.conf

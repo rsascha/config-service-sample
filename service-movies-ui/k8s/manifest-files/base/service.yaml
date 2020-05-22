@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: development-tools
+  name: service-movies-ui
 spec:
   selector:
-    app: development-tools
+    app: service-movies-ui
   type: NodePort
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 8091
       targetPort: 8080
