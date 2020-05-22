@@ -1,0 +1,15 @@
+# GENERATED FROM: templates/job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: service-movies-migration
+spec:
+  template:
+    spec:
+      containers:
+      - name: service-movies-migration
+        image: localhost:5000/service-movies-migration:3
+        command: ["npm", "run", "typeorm:migration:run"]
+      restartPolicy: Never
+  backoffLimit: 5
+  ttlSecondsAfterFinished: 100

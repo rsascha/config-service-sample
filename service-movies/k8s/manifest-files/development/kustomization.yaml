@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: service-movies
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml

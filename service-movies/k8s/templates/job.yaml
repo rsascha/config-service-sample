@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: service-movies-migration
+spec:
+  template:
+    spec:
+      containers:
+      - name: service-movies-migration
+        image: localhost:5000/service-movies-migration:$VERSION
+        command: ["npm", "run", "typeorm:migration:run"]
+      restartPolicy: Never
+  backoffLimit: 5
+  ttlSecondsAfterFinished: 100

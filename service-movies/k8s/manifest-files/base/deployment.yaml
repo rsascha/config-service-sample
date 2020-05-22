@@ -1,0 +1,29 @@
+# GENERATED FROM: templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-movies
+spec:
+  selector:
+    matchLabels:
+      app: service-movies
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-movies
+    spec:
+      containers:
+      - name: service-movies
+        image: localhost:5000/service-movies:3
+        ports:
+        - containerPort: 3334
+        env:
+          - name: port
+            value: "3334"
+          - name: database
+            value: "database"
+          - name: serviceUsersHost
+            value: "service-users"
+          - name: serviceUsersPort
+            value: "3333"
