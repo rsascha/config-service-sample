@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-users
+  name: service-users-ui
 spec:
   selector:
-    app: service-users
+    app: service-users-ui
   type: NodePort
   ports:
     - name: http
       protocol: TCP
-      port: 3333
-      targetPort: 3333
+      port: 8090
+      targetPort: 8080
     

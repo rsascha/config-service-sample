@@ -1,0 +1,10 @@
+namespace: development
+
+commonLabels:
+  app: service-users-ui
+
+bases:
+  - ../base/
+
+resources:
+  - namespace.yaml
