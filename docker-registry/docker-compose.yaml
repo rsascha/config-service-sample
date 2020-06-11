@@ -2,6 +2,11 @@ registry:
   restart: always
   image: registry:2
   ports:
-    - 5000:5000
+    - 443:443
   volumes:
     - ~/.registry/data:/var/lib/registry
+    - ./certs:/certs
+  environment:
+    - REGISTRY_HTTP_ADDR=0.0.0.0:443
+    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/localhost.crt
+    - REGISTRY_HTTP_TLS_KEY=/certs/localhost.key
