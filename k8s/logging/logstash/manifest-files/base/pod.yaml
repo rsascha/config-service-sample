@@ -6,6 +6,6 @@ metadata:
 spec:
   containers:
   - name: logstash
-    image: localhost:5000/logstash:29
+    image: localhost:5000/logstash:32
     imagePullPolicy: IfNotPresent
   restartPolicy: Always
