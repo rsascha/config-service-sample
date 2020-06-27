@@ -1,0 +1,5 @@
+commonLabels:
+  app: logstash
+
+resources:
+- pod.yaml

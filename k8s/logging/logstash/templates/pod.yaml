@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debugger
+  name: logstash
 spec:
   containers:
-  - name: debugger
-    image: localhost/debugger:$VERSION
+  - name: logstash
+    image: localhost:5000/logstash:$VERSION
     command:
       - sleep
       - "3600"

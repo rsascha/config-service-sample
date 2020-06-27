@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: logstash
+  name: logstash
+  namespace: development
+spec:
+  containers:
+  - command:
+    - sleep
+    - "3600"
+    image: localhost:5000/logstash:21
+    imagePullPolicy: IfNotPresent
+    name: logstash
+  restartPolicy: Always

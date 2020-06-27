@@ -1,11 +1,12 @@
+# GENERATED FROM: templates/pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debugger
+  name: logstash
 spec:
   containers:
-  - name: debugger
-    image: localhost/debugger:$VERSION
+  - name: logstash
+    image: localhost:5000/logstash:21
     command:
       - sleep
       - "3600"

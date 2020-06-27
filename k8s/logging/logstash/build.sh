@@ -8,9 +8,9 @@ TARGET_FILE="manifest-files/base/pod.yaml"
 echo "# GENERATED FROM: ${SOURCE_FILE}" > $TARGET_FILE
 cat $SOURCE_FILE | envsubst >> $TARGET_FILE
 
-IMAGE=localhost/debugger:$VERSION
+IMAGE=localhost:5000/logstash:$VERSION
 docker build --tag $IMAGE .
 
 docker push $IMAGE
 
-kubectl apply -k manifest-files/development/
+kustomize build manifest-files/development/ --output logstash.yaml
