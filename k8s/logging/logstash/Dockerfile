@@ -67,7 +67,11 @@ RUN chown --recursive logstash:root config/ pipeline/
 
 USER 1000
 
-EXPOSE 9600 5044
+EXPOSE 9600 9610
 
-ENTRYPOINT ["/logstash-entrypoint.sh"]
-CMD ["-e", ""]
+ENV LS_JAVA_OPTS="-Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/ $LS_JAVA_OPTS"
+
+ENTRYPOINT [ "/usr/share/logstash/bin/logstash" ]
+
+# ENTRYPOINT ["/logstash-entrypoint.sh"]
+# CMD ["-e", ""]

@@ -6,8 +6,5 @@ spec:
   containers:
   - name: logstash
     image: localhost:5000/logstash:$VERSION
-    command:
-      - sleep
-      - "3600"
     imagePullPolicy: IfNotPresent
   restartPolicy: Always

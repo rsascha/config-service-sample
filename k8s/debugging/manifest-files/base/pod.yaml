@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: debugger
-    image: localhost:5000/debugger:12
+    image: localhost:5000/debugger:21
     command:
       - sleep
       - "3600"

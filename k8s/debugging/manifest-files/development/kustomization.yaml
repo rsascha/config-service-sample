@@ -5,6 +5,3 @@ commonLabels:
 
 bases:
   - ../base/
-
-resources:
-  - namespace.yaml

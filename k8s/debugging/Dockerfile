@@ -1,4 +1,4 @@
-FROM alpine
+FROM ubuntu
 
-RUN apk update
-RUN apk add vim
+RUN apt-get -y update
+RUN apt-get install -y vim netcat curl
