@@ -1,0 +1,5 @@
+resources:
+- fluent-bit-configmap.yaml
+- fluent-bit-role-binding.yaml
+- fluent-bit-role.yaml
+- fluent-bit-service-account.yaml

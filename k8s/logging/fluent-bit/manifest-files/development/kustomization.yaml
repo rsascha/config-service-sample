@@ -1,0 +1,7 @@
+namespace: development
+
+commonLabels:
+  app: logstash
+
+bases:
+  - ../base/
