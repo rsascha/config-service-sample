@@ -7,7 +7,7 @@ metadata:
   namespace: development
 spec:
   containers:
-  - image: localhost:5000/logstash:32
+  - image: localhost:5000/logstash:33
     imagePullPolicy: IfNotPresent
     name: logstash
   restartPolicy: Always
