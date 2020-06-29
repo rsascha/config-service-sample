@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: service-users
-        image: localhost/service-users:31
+        image: localhost:5000/service-users:31
         ports:
         - containerPort: 3333
         env:

@@ -9,6 +9,6 @@ TARGET_FILE="manifest-files/base/deployment.yaml"
 echo "# GENERATED FROM: ${SOURCE_FILE}" > $TARGET_FILE
 cat $SOURCE_FILE | envsubst >> $TARGET_FILE
 
-IMAGE=localhost/service-users:$VERSION
+IMAGE=localhost:5000/service-users:$VERSION
 docker build -f ../$DOCKERFILE --tag $IMAGE ..
 docker push $IMAGE

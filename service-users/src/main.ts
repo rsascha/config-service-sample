@@ -23,7 +23,11 @@ async function bootstrap() {
 
     app.use(swStats.getMiddleware({}));
     logger.log(`http://localhost:${port}/swagger-stats/ux#/`)
-    
+
+    setInterval(() => {
+        logger.log(`${Date.now()}`);
+    }, 1000);
+
     await app.listen(port, () => {
         logger.log(`Listening at http://localhost:${port}/${globalPrefix}`);
     });

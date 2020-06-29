@@ -4,4 +4,7 @@ commonLabels:
   app: logstash
 
 bases:
-  - ../base/
+- ../base/
+
+patchesStrategicMerge:
+- fluent-bit-configmap.yaml
